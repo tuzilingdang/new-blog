@@ -18,7 +18,7 @@ tags: Vue, 俄罗斯方块小游戏
 
 比如这样的HTML，Dom和标记是一一对应的关系：
 
-```
+```html
 <html>
   <body>
     <p>
@@ -51,7 +51,9 @@ tags: Vue, 俄罗斯方块小游戏
 
 ### Vue内部流程
 
-![MacDown logo](https://segmentfault.com/img/bV51sZ?w=1752&h=1216)
+<!--![Vue内部流程](https://segmentfault.com/img/bV51sZ?w=1752&h=1216)-->
+![Vue内部流程](../../../../images/201806170/1.png)
+
 
 ### Vue.js异步更新及nextTick
 
@@ -61,8 +63,7 @@ https://github.com/tuzilingdang/learnVue/blob/master/docs/Vue.js%E5%BC%82%E6%AD%
 
 ### VNode结点
 
-```
-
+```javascript
 export default class VNode {
   tag: string | void;
   data: VNodeData | void;
@@ -140,7 +141,7 @@ export default class VNode {
 
 **简单的Vnode树**
 
-```
+```css
 {
     tag: 'div'
     data: {
@@ -161,7 +162,7 @@ export default class VNode {
 
 **对应的HTML**
 
-```
+```html
 <div class="test">
     <span class="demo">hello,VNode</span>
 </div>
@@ -180,8 +181,7 @@ export default class VNode {
 
 #### 相同节点 -- sameVNode
 
-```
-
+```javascript
 /*
   判断两个VNode节点是否是同一个节点，需要满足以下条件
   key相同
@@ -268,7 +268,7 @@ function sameVnode (a, b) {
 
 ##  小游戏的性能问题
 
-```
+```javascript
     left(matrix) {
         if (this.pos.y - 1 < 0) return false
 
@@ -293,7 +293,7 @@ function sameVnode (a, b) {
 
 ```
 
-```
+```javascript
     down(matrix, accRowsList, clearRows) {
         const shapeHeight = this.shape.length
         const shapeWidth = this.shape[0].length
@@ -345,7 +345,7 @@ function sameVnode (a, b) {
     }
 
 ```
-```
+```html
 <div class="screen-grid-area" :class="!isGameOn ? 'hidden': ''">
        <div class="square"  :class="!gameOver && matrix[parseInt((n-1)/columnNum)][(n-1)%columnNum ] ? 'black':''"
                     v-for="n in columnNum*rowNum" :id="`${parseInt((n-1)/columnNum)}-${(n-1)%columnNum }`" v-bind:key="n">
@@ -356,6 +356,7 @@ function sameVnode (a, b) {
 ```
 
 
+### 结论
 
 每次掉落都会触发一次diff， 每秒 diff 的最大复杂度  O（12 * 22 ）， 一个周期 22 * O（12 * 22 ）
 
