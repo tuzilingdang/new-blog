@@ -52,7 +52,7 @@ tags: Vue, 俄罗斯方块小游戏
 ### Vue内部流程
 
 <!--![Vue内部流程](https://segmentfault.com/img/bV51sZ?w=1752&h=1216)-->
-![Vue内部流程](../../../../images/201806170/1.png)
+![Vue内部流程](../../../../img/201806170/1.png)
 
 
 ### Vue.js异步更新及nextTick
