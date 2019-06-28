@@ -4,10 +4,10 @@ date: 2017-09-21 22:39:48
 tags: JavaScript学习笔记; 异步
 ---
 
-### 例子
-来看这样一个例子：
+## 例子
+来看这样一个🌰栗子：
 
-```
+```js
 async function async1(){
     console.log('async1 start');
     await async2();
@@ -38,7 +38,7 @@ console.log('script end');
 
 思考程序输出的结果，没仔细想的话，结果可能是这样的：
 
-```
+```js
 script start
 async1 start
 async2 start
@@ -52,7 +52,7 @@ promise end
 
 再仔细想想，这次应该对了吧？
 
-```
+```js
 script start
 async1 start
 async2 start
@@ -66,7 +66,7 @@ promise end
 
 用node执行以下看看，居然还是不对呀，结果居然是这样的：
 
-```
+```js
 script start
 async1 start
 async2 start
@@ -76,16 +76,17 @@ async1 end
 promise end
 setTimeout
 ```
-###  JavaScript的异步处理机制
 
-####（1） JavaScript的单线程
+##  JavaScript的异步处理机制
+
+### （1） JavaScript的单线程
 
 作为浏览器中使用的语言，JavaScript一个最大的特点是单线程。 具体线程和进程的知识可以参考阮一峰大神的博客[进程与线程的一个简单解释](http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html)，非常形象的讲解了这两个概念。
 
 
 这就说明在执行一段代码时，运行了一个进程，在这个进程上只能运行一个线程。所有任务的执行都需要排队进行。
 
-#### （2）事件循环
+### （2）事件循环
 
 **神马是事件循环**
 
@@ -98,7 +99,7 @@ setTimeout
 
 **实现方式类似这样**：
 
-```
+```js
 while (queue.waitForMessage()) {
   queue.processNextMessage();
 }
@@ -109,9 +110,9 @@ while (queue.waitForMessage()) {
 事件循环还有一个重要的特性是不会阻塞。正由于异步的机制，比如等待一个ajax请求返回数据前，JavaScript还是可以同时处理其他的事情。
 
 
-#### （3）堆、栈和队列
+### （3）堆、栈和队列
 
-##### 堆、栈和队列
+#### 堆、栈和队列
 
 下图是MDN Docs上对JavaScript的堆、栈和队列的描述：
 
@@ -131,7 +132,7 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 
 
 
-#### （3）同步任务和异步任务
+### （3）同步任务和异步任务
 
 在JavaScript执行中，可以把任务分成两种，一种是同步任务，一种是异步任务。结合（1）和（2）中所述，我们可以归纳如下的过程：
 
@@ -143,15 +144,16 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 
 （4）主线程循环处理第（1）（2）（3）个步骤。
 
-###  例子的代码执行过程
 
-#### （1）压栈顺序
+##  例子的代码执行过程
+
+### （1）压栈顺序
 
 所有任务均按上述过程在主线程进行处理，整体压栈顺序及出栈顺序可见下图：
 
-![压栈顺序图](/img/JavaScript学习笔记-异步处理机制/1.png)
+![压栈顺序图](../../../../img/JavaScript学习笔记-异步处理机制/1.png)
 
-#### (2) 任务队列
+### (2) 任务队列
 
 任务队列中放入的是异步任务，任务完成时，会添加进来一个事件。主线程执行完同步任务后开始执行异步任务。依次有以下几个任务：
 
@@ -166,12 +168,12 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 };
 
 
-#### (3) 为什么setTimeout的回调结果最后才显示？
+### (3) 为什么setTimeout的回调结果最后才显示？
 
 可参见这篇博客：[从Promise来看JavaScript中的Event Loop、Tasks和Microtasks](http://www.tuicool.com/articles/MnY7N3a)。
 博客中有这样一个例子：
 
-```
+```js
 (function test() {
     setTimeout(function() {console.log(4)}, 0);
     new Promise(function executor(resolve) {
@@ -198,9 +200,9 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 3. 第一步中的task如果已经被执行了，那就从任务队列中把它移除。
 4. 如果Eventloop不是 worker's event loop， 那么执行以下三小步。
 
-   1.  执行microtask检查
-   2.  提供一个稳定的状态
-   3. 如果必要的话更新Document或浏览器上下文的渲染和用户交互来反映当前状态。
+   * (1)  执行microtask检查
+   * (2)  提供一个稳定的状态
+   * (3) 如果必要的话更新Document或浏览器上下文的渲染和用户交互来反映当前状态。
 5. 如果eventloop在全局作用域下执行，但在任务队列中没有事件，并且此时全局作用域对象中的closingFlag是true的话，那就销毁event loop。
 6.  从第一步重复执行。
 

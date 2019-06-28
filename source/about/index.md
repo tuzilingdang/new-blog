@@ -11,7 +11,7 @@ date: 2019-06-27 15:48:50
 
 ### 微信
 
-![](../img/about/WechatIMG1218.jpeg)
+![](../img/about/wechat.jpeg)
 
 ### QQ
 

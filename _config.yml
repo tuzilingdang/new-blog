@@ -7,7 +7,7 @@ title: April
 subtitle:
 description:
 keywords:
-author:
+author: April Ji
 language: chinese 
 timezone:
 
@@ -79,4 +79,6 @@ theme: cactus
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/tuzilingdang/tuzilingdang.github.io.git
+  branch: master
