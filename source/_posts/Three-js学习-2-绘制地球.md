@@ -7,6 +7,8 @@ tags:
 
 ## Demo效果展示
 
+<!--cover: https://img11.360buyimg.com/jdphoto/s200x146_jfs/t1/49152/11/15362/8548/5dc524d2Ebd295613/e8ccb1d68c6195a7.jpg-->
+
 ![](../../../../img/201806250/earth-200.gif)
 
 另外一个效果超级赞的绘制有全球石油进出口情况的地球如下：
@@ -19,20 +21,26 @@ tags:
 
 color map 是由原作者综合了原始地球地图，美国地质调查局DEM信息的梯度映射，手绘图，球体深度信息和美国地质调查局海洋剪辑合成的，所以准确度比较高。 现在只能拿到1k的小图，绘制效果不好，如果要拿到更清晰的图片，可以付费下载，最大可以有10K。 这里另外找了一张3000*2000左右像素的color map，效果稍好一点。
 
-![color map](http://planetpixelemporium.com/images/mappreviews/earthmapthumb.jpg)
+<!--![color map](http://planetpixelemporium.com/images/mappreviews/earthmapthumb.jpg)-->
+![](https://img11.360buyimg.com/jdphoto/s200x100_jfs/t1/62224/31/14866/6420/5dc52ec1E71192399/6c79e2d3ea060edf.jpg)
 
 bump map 用于绘制地球凹凸不平的表面特征，作者通过美国地质调查局DEM数据库拼凑而成。 图片只包含了陆地的海拔高度，海平面为0。最高点珠峰高度为255。如果需要生成超仿真3D地球，请可以付费下载10K版本。
 
-![earthbumpthumb](http://planetpixelemporium.com/images/mappreviews/earthbumpthumb.jpg)
+<!--![earthbumpthumb](http://planetpixelemporium.com/images/mappreviews/earthbumpthumb.jpg)-->
+![](https://img11.360buyimg.com/jdphoto/s200x100_jfs/t1/62997/27/15021/3502/5dc52e86Ed808a666/2bd905ac9373d220.jpg)
 
 specular map则用于绘制海洋表面的高光和反射，因用图片后比较刺眼，这里先去掉了。
 
-![specular map](http://planetpixelemporium.com/images/mappreviews/earthspecthumb.jpg)
+<!--![specular map](http://planetpixelemporium.com/images/mappreviews/earthspecthumb.jpg)-->
+![](https://img11.360buyimg.com/jdphoto/s200x100_jfs/t1/75537/3/14936/6762/5dc52df2E55263de9/29e70f45de62980c.jpg)
 
 大气图片有两种，一个是colormap，一个是transparent map 表示透明度
 
-![](http://planetpixelemporium.com/images/mappreviews/earthcloudmapthumb.jpg)
-![](http://planetpixelemporium.com/images/mappreviews/earthcloudmaptransthumb.jpg)
+<!--![](http://planetpixelemporium.com/images/mappreviews/earthcloudmapthumb.jpg)-->
+![](https://img11.360buyimg.com/jdphoto/s200x100_jfs/t1/61570/40/14920/7563/5dc52d9bEb3a1b38a/ba0fcb405df9edbb.jpg)
+<!--![](http://planetpixelemporium.com/images/mappreviews/earthcloudmaptransthumb.jpg)-->
+![](https://img11.360buyimg.com/jdphoto/s200x100_jfs/t1/92910/2/1824/6856/5dc52d5aEa40d133e/84e8249d020699c7.jpg)
+
 
 图片准备好了，接下来就可以慢慢把图片一层一层贴上去了
 
@@ -193,7 +201,7 @@ specular map则用于绘制海洋表面的高光和反射，因用图片后比�
 
 聚光灯官方文档示例：
 
-![spotlight.gif](../../../../img/201806250/spotlight.png)
+![spotlight.gif](https://img11.360buyimg.com/jdphoto/s1514x834_jfs/t1/75881/11/14966/103836/5dc52adbE691f072c/8f767bf13d9cd84d.png)
 
 直加聚光灯，有一半会像真实的地球一样淹没在黑暗里，但我们像看到全部的面貌，所以添加了AmbientLight均匀照亮场景中的所有物体。
 DirectionalLight光线太强，加上效果不好，可以忽略了。
