@@ -144,6 +144,13 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 
 （4）主线程循环处理第（1）（2）（3）个步骤。
 
+### (4) 宏任务和微任务
+参考文章：
+
+[Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+
+[Promise 注册微任务和执行过程](https://juejin.im/post/5dcb775c518825574d214b89)
+
 
 ##  例子的代码执行过程
 
@@ -208,4 +215,3 @@ JavaScript运行时会包含一个待处理的消息队列。每个消息会关�
 
 在这里promise的回校应该是被添加到了microtask队列中执行了，然后先输出5， 之后再执行下一个任务输出4。
 
-看了半天，感觉还是理解的不清楚，之后有时间这部分内容会继续补充。
